@@ -1,4 +1,8 @@
 /// <reference types="cypress" />
+
+import { createServer } from "vite";
+import { startDevServer } from "@cypress/vite-dev-server";
+
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -16,7 +20,13 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
+module.exports = (on: Cypress.PluginEvents, config: Cypress.PluginConfig) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+};
+
+module.exports = (on: Cypress.PluginEvents, config: Cypress.PluginConfig) => {
+  on("dev-server:start", async (options) => {
+    return await startDevServer({ options });
+  });
+};
