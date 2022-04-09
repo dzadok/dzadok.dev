@@ -1,4 +1,3 @@
-import { contains } from "cypress/types/jquery";
 import React from "react";
 
 describe("Visit Main page", () => {
