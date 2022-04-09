@@ -9,6 +9,8 @@ describe("Visit Main page", () => {
     cy.visit("").get("h1").should("contain.text", "David Zadok");
   });
   it('Display markdown with a title starting with "Motivation"', () => {
-    cy.visit("").get(":nth-child(2) > h1").should("contain.text", "Motivation");
+    cy.visit("")
+      .get("#blog > :nth-child(1)")
+      .should("include.text", "Motivation");
   });
 });

@@ -1,7 +1,5 @@
-import { convertMarkdown } from "./Blog";
 import { mount } from "@cypress/react";
-
-export {};
+import { convertMarkdown } from "./markdown";
 
 describe("Markdown conversion", () => {
   it("Renders simple markdown", () => {
