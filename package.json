@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "watch": "tsc --watch",
+    "watch": "vite build --watch",
     "cypress:open": "cypress open",
     "cypress:openct": "cypress open-ct"
   },
