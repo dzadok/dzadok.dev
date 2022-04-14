@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { addPostDate, convertMarkdown } from "./markdown";
 
-async function GetBlogPosts() {
+function GetBlogPosts() {
   const blogPosts: Record<string, string> = import.meta.glob(
     "./../content/*.md",
     {
