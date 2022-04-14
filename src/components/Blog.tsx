@@ -3,7 +3,7 @@ import { addPostDate, convertMarkdown } from "./markdown";
 
 function GetBlogPosts() {
   const blogPosts: Record<string, string> = import.meta.glob(
-    "./../content/*.md",
+    "./../../content/*.md",
     {
       as: "raw",
     }
