@@ -2,7 +2,9 @@ import ReactMarkdown from "react-markdown";
 import { Dayjs } from "dayjs";
 
 export function convertMarkdown(markdown: string) {
-  return <ReactMarkdown children={markdown}></ReactMarkdown>;
+  return (
+    <ReactMarkdown children={markdown} className="blogPost"></ReactMarkdown>
+  );
 }
 
 export function addPostDate(markdown: string, date: Dayjs) {
