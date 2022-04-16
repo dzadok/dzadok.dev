@@ -1,6 +1,6 @@
 import { mount } from "@cypress/react";
 import dayjs from "dayjs";
-import { convertMarkdown, addPostDate } from "./markdown";
+import { convertMarkdown, addPostDate } from "./Markdown";
 
 describe("Markdown conversion", () => {
   it("Renders simple markdown", () => {

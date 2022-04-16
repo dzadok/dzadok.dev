@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { addPostDate, convertMarkdown } from "./markdown";
+import { addPostDate, convertMarkdown } from "./Markdown";
 
 function GetBlogPosts() {
   const blogPosts: Record<string, string> = import.meta.glob(
@@ -22,5 +22,5 @@ function GetBlogPosts() {
 }
 
 export default function Blog() {
-  return <div id="blog">{GetBlogPosts()}</div>;
+  return <section id="blog">{GetBlogPosts()}</section>;
 }
