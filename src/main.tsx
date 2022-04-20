@@ -12,7 +12,7 @@ import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBt93YZMu-obz_vgwlSPqzlOlCV8F0BCno",
-  authDomain: "dzadok-dev.firebaseapp.com",
+  authDomain: "dzadok.dev",
   projectId: "dzadok-dev",
   storageBucket: "dzadok-dev.appspot.com",
   messagingSenderId: "161116533438",
