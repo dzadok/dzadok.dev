@@ -1,0 +1,6 @@
+#blog {
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  top: 64pt;
+}
