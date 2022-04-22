@@ -1,27 +1,14 @@
-const titleRegExp = /^\#[^\#].*$/gm;
-const headerRegExp = /^\#\#[^\#].*$/gm;
+const TITLE_REGEXP = /^\#[^\#].*$/gm;
 
-export function mdToJson(md: string): Record<any, any> {
-  const titles = md.split("\n").filter((x) => titleRegExp.test(x));
+export default function mdToJson(md: string): Record<any, any> {
+  const titles = md.split("\n").filter((x) => TITLE_REGEXP.test(x));
   const title = titles[0].substring(1);
 
-  const rest = md.split("\n").filter((x) => !titleRegExp.test(x));
+  const content = md
+    .split("\n")
+    .filter((x) => !TITLE_REGEXP.test(x))
+    .join("\n")
+    .substring(1);
 
-  const headers: string[] = [];
-  const text: string[] = [];
-
-  rest.forEach((x) => {
-    if (headerRegExp.test(x)) {
-      headers.push(x.substring(2));
-      text.push("");
-    } else {
-      text[text.length - 1] = text[text.length - 1] + x;
-    }
-  });
-
-  const content = headers.map((header, index) => {
-    return { header, section: [{ text: text[index] }] };
-  });
-  console.log({ title, content });
   return { title, content };
 }
