@@ -2,5 +2,26 @@
   overflow: auto;
   position: absolute;
   bottom: 0;
-  top: 64pt;
+  top: 4rem;
+  margin-left: 1rem;
+}
+
+.blogPost > h1 {
+  color: rgb(92, 39, 105);
+  margin-bottom: 0;
+}
+
+.blogPost > h3 {
+  margin-bottom: 1vh;
+}
+
+/* Should always be the date */
+.blogPost > :nth-child(2) {
+  margin: 1vh;
+  color: #777;
+}
+
+.blogPost > p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }

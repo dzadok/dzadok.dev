@@ -1,8 +1,16 @@
 header {
-  font-size: 48pt;
   position: fixed;
+  width: 100vw;
+}
+
+.myName {
+  font-size: 3rem;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .links {
-  font-size: 24pt;
+  font-size: 1.5rem;
+  right: 0;
+  position: absolute;
 }
