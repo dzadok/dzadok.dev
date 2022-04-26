@@ -3,8 +3,8 @@ import { Dayjs } from "dayjs";
 
 export function convertMarkdown(markdown: string) {
   return (
-    <article>
-      <ReactMarkdown children={markdown} className="blogPost"></ReactMarkdown>
+    <article key={markdown.split("\n")[1]} className="blogPost">
+      <ReactMarkdown children={markdown}></ReactMarkdown>
     </article>
   );
 }
