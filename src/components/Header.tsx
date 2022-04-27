@@ -8,9 +8,9 @@ export default function Header() {
     <header>
       <div className="myName">David Zadok</div>
       <div className="links">
-        <a href="https://github.com/dzadok">{GithubIcon()}</a>
-        <a href="mailto:david@dzadok.dev">{EmailIcon({})}</a>
-        <a href="https://linkedin.com/in/david-zadok">{LinkedInIcon()}</a>
+        <a aria-label="github" href="https://github.com/dzadok">{GithubIcon()}</a>
+        <a aria-label="email" href="mailto:david@dzadok.dev">{EmailIcon({})}</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/david-zadok">{LinkedInIcon()}</a>
       </div>
     </header>
   );

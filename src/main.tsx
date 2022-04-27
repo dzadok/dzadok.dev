@@ -27,7 +27,9 @@ const analytics = getAnalytics(app);
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Blog />
+    <main>
+      <Blog />
+    </main>
   </React.StrictMode>,
   document.getElementById("root")
 );

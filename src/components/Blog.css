@@ -6,7 +6,7 @@
   margin-left: 1rem;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 30em) {
   #blog {
     top: 4rem;
   }
@@ -24,10 +24,14 @@
 /* Should always be the date */
 .blogPost > :nth-child(2) {
   margin: 1vh;
-  color: #777;
+  color: #888;
 }
 
 .blogPost > p {
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+.blogPost > :first-child {
+  margin-top: 0;
 }

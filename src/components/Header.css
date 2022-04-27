@@ -5,7 +5,7 @@ header {
   flex-direction: column;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 30em) {
   header {
     flex-direction: row;
   }
@@ -19,10 +19,4 @@ header {
 
 .links {
   font-size: 1.5rem;
-  /* right: 0; */
-  /* position: absolute; */
-}
-
-a {
-  padding: 0.5rem;
 }
