@@ -6,12 +6,12 @@ import LinkedInIcon from "./Linkedin";
 export default function Header() {
   return (
     <header>
-      <span className="myName">David Zadok</span>
-      <span className="links">
+      <div className="myName">David Zadok</div>
+      <div className="links">
         <a href="https://github.com/dzadok">{GithubIcon()}</a>
         <a href="mailto:david@dzadok.dev">{EmailIcon({})}</a>
         <a href="https://linkedin.com/in/david-zadok">{LinkedInIcon()}</a>
-      </span>
+      </div>
     </header>
   );
 }

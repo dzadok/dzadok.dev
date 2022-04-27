@@ -2,8 +2,14 @@
   overflow: auto;
   position: absolute;
   bottom: 0;
-  top: 4rem;
+  top: 8rem;
   margin-left: 1rem;
+}
+
+@media (min-width: 40em) {
+  #blog {
+    top: 4rem;
+  }
 }
 
 .blogPost > h1 {
