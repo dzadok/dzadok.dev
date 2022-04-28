@@ -4,12 +4,17 @@ describe("Visit Main page", () => {
   it("Has my name as a title", () => {
     cy.visit("").get("title").should("contain.text", "David Zadok");
   });
-  it("Has my name in an H1", () => {
-    cy.visit("").get("h1").should("contain.text", "David Zadok");
+  it("Has my name on the page", () => {
+    cy.visit("").get(".myName").should("contain.text", "David Zadok");
   });
   it('Display markdown with a title starting with "Motivation"', () => {
     cy.visit("")
-      .get("#blog > :nth-child(1)")
+      .get("#blog > :first-child")
       .should("include.text", "Motivation");
+  });
+  it("Should show the blog post date", () => {
+    cy.visit("")
+      .get("#blog > :first-child")
+      .should("include.text", "Apr 6, 2022");
   });
 });
