@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Blog from "./components/Blog";
@@ -23,6 +23,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
+
+const mode =
+  localStorage.getItem("lightOrDark") ??
+  (window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light");
+document.body.classList.add(mode);
 
 ReactDOM.render(
   <React.StrictMode>

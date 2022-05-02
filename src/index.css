@@ -10,6 +10,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark {
+  background-color: hsl(275, 100%, 12%);
+}
+
+.light {
+  background-color: hsl(275, 100%, 88%);
+}
+
 h1 {
   font-size: 32px;
 }

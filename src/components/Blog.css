@@ -1,19 +1,30 @@
 #blog {
   overflow: auto;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   top: 8rem;
   margin-left: 1rem;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 640px) {
   #blog {
     top: 4rem;
   }
 }
 
-.blogPost > h1 {
-  color: rgb(92, 39, 105);
+#blog > :first-child {
+  margin-top: 0;
+}
+
+.blogPost-light > h1 {
+  color: hsl(288, 46%, 28%);
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.blogPost-dark > h1 {
+  color: hsl(288, 46%, 72%);
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 
