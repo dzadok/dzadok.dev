@@ -19,6 +19,6 @@ describe("BlogPost Date", () => {
         )
       )
     );
-    cy.get("h3").should("contain.text", "Jan 1, 2000");
+    cy.get(":nth-child(2)").should("contain.text", "Jan 1, 2000");
   });
 });
