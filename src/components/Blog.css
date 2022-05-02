@@ -16,14 +16,15 @@
   margin-top: 0;
 }
 
-.blogPost-light > h1 {
+.blogPost.light > h1 {
   color: hsl(288, 46%, 28%);
-  margin-top: 2rem;
-  margin-bottom: 0;
 }
 
-.blogPost-dark > h1 {
+.blogPost.dark > h1 {
   color: hsl(288, 46%, 72%);
+}
+
+.blogPost > h1 {
   margin-top: 2rem;
   margin-bottom: 0;
 }

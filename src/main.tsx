@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import Blog from "./components/Blog";
 import Header from "./components/Header";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import "./index.css";
+import { setLightOrDarkMode } from "./lightOrDark";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -24,13 +25,7 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 
-const mode =
-  localStorage.getItem("lightOrDark") ??
-  (window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light");
-document.body.classList.add(mode);
+setLightOrDarkMode();
 
 ReactDOM.render(
   <React.StrictMode>
