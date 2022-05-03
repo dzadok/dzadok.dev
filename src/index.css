@@ -12,10 +12,20 @@ body {
 
 .dark {
   background-color: hsl(275, 100%, 12%);
+  color: white;
+}
+
+.dark > p > a {
+  color: hsl(275, 100%, 88%);
 }
 
 .light {
   background-color: hsl(275, 100%, 88%);
+  color: black;
+}
+
+.light > p > a {
+  color: hsl(275, 100%, 12%);
 }
 
 h1 {
@@ -29,8 +39,4 @@ h2 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-a {
-  padding: 0.5rem;
 }

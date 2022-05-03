@@ -1,15 +1,19 @@
 import ReactMarkdown from "react-markdown";
 import { Dayjs } from "dayjs";
-import { lightOrDark } from "../lightOrDark";
+import { lightOrDarkContext } from "../lightOrDark";
 
 export function convertMarkdown(markdown: string) {
   return (
-    <article
-      key={markdown.split("\n")[1]}
-      className={`blogPost ${lightOrDark()}`}
-    >
-      <ReactMarkdown children={markdown}></ReactMarkdown>
-    </article>
+    <lightOrDarkContext.Consumer>
+      {(theme) => (
+        <article
+          key={markdown.split("\n")[1]}
+          className={`blogPost ${theme.theme}`}
+        >
+          <ReactMarkdown children={markdown}></ReactMarkdown>
+        </article>
+      )}
+    </lightOrDarkContext.Consumer>
   );
 }
 

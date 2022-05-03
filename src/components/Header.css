@@ -3,6 +3,7 @@ header {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  margin-top: 2px;
 }
 
 @media (min-width: 640px) {
@@ -22,6 +23,10 @@ header {
 }
 
 .linkedIn-logo {
-  background: #fff;
+  background: white;
   border-radius: 10%;
+}
+
+.links > a {
+  padding: 0.5rem;
 }

@@ -1,4 +1,3 @@
-import { mount } from "@cypress/react";
 import { lightOrDark, lightOrDarkMode } from "./lightOrDark";
 
 let saveLocalStorage: lightOrDarkMode;

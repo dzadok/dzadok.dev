@@ -2,10 +2,8 @@ import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import React from "react";
 import ReactDOM from "react-dom";
-import Blog from "./components/Blog";
-import Header from "./components/Header";
+import App from "./components/App";
 import "./index.css";
-import { setLightOrDarkMode } from "./lightOrDark";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -25,14 +23,9 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 
-setLightOrDarkMode();
-
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <main>
-      <Blog />
-    </main>
+    <App></App>
   </React.StrictMode>,
   document.getElementById("root")
 );

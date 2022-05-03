@@ -1,4 +1,11 @@
+import { createContext } from "react";
+
 export type lightOrDarkMode = "light" | "dark";
+
+export const lightOrDarkContext = createContext({
+  theme: setLightOrDarkMode(),
+  updateTheme: (curr: lightOrDarkMode) => {},
+});
 
 export function lightOrDark(): lightOrDarkMode {
   const storage = localStorage.getItem("lightOrDark");
@@ -17,6 +24,10 @@ export function lightOrDark(): lightOrDarkMode {
 
 export function setLightOrDarkMode(): lightOrDarkMode {
   const mode = lightOrDark();
-  document.body.classList.add(mode);
+  if (
+    !document.body.classList.replace(mode === "dark" ? "light" : "dark", mode)
+  ) {
+    document.body.classList.add(mode);
+  }
   return mode;
 }

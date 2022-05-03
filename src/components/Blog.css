@@ -34,9 +34,15 @@
 }
 
 /* Should always be the date */
-.blogPost > :nth-child(2) {
+.blogPost.dark > :nth-child(2) {
   margin: 1vh;
-  color: #888;
+  color: #aaa;
+}
+
+/* Should always be the date */
+.blogPost.light > :nth-child(2) {
+  margin: 1vh;
+  color: #444;
 }
 
 .blogPost > p {
