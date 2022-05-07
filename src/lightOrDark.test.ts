@@ -1,9 +1,9 @@
-import { lightOrDark, lightOrDarkMode } from "./lightOrDark";
+import { lightOrDark, theme } from "./lightOrDark";
 
-let saveLocalStorage: lightOrDarkMode;
+let saveLocalStorage: theme;
 
 beforeEach(() => {
-  saveLocalStorage = localStorage.getItem("lightOrDark") as lightOrDarkMode;
+  saveLocalStorage = localStorage.getItem("lightOrDark") as theme;
 });
 
 afterEach(() => {

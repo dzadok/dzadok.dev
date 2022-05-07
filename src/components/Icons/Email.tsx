@@ -1,18 +1,24 @@
-// icon:email | Material Design Icons https://materialdesignicons.com/ | Austin Andrews
-import * as React from "react";
-
-function EmailIcon(props: React.SVGProps<SVGSVGElement>) {
+// https://tabler-icons.io/i/mail
+export default function Email(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="icon icon-tabler icon-tabler-mail"
+      width={props.width}
+      height={props.height}
       viewBox="0 0 24 24"
-      fill="currentColor"
-      height="2em"
-      width="2em"
-      {...props}
+      strokeWidth={2}
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <path d="M20 8l-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z" />
+      <desc>
+        Download more icon variants from https://tabler-icons.io/i/mail
+      </desc>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x={3} y={5} width={18} height={14} rx={2}></rect>
+      <polyline points="3 7 12 13 21 7"></polyline>
     </svg>
   );
 }
-
-export default EmailIcon;

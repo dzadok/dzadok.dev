@@ -30,3 +30,20 @@ header {
 .links > a {
   padding: 0.5rem;
 }
+
+svg.light > g > path {
+  fill: black;
+}
+svg.dark > g > path {
+  fill: white;
+}
+
+#Moon.dark {
+  box-shadow: inset 7px 2px 1px hsla(0, 0%, 80%, 50%);
+}
+
+#Sun.light {
+  /* box-shadow: inset 3px 3px 3px 3px hsla(51, 100%, 50%, 50%); */
+  border-radius: 50%;
+  box-shadow: 0 0 50px #fff;
+}
