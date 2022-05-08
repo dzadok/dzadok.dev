@@ -61,7 +61,7 @@ svg.dark > g > path {
 
 .dark > #toggle::before {
   transform: translateX(1.25rem);
-  background-image: radial-gradient(circle at right, silver, black);
+  background-image: radial-gradient(circle at right, hsl(248, 10%, 50%), black);
 }
 
 .light > #toggle::before {
