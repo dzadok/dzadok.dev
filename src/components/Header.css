@@ -2,7 +2,7 @@ header {
   position: fixed;
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin-top: 2px;
 }
 

@@ -3,7 +3,8 @@
   position: fixed;
   bottom: 0;
   top: 8rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  width: calc(100% - 2rem);
 }
 
 @media (min-width: 640px) {
@@ -35,19 +36,23 @@
 
 /* Should always be the date */
 .blogPost.dark > :nth-child(2) {
-  margin: 1vh;
+  margin-top: 0;
   color: #aaa;
 }
 
 /* Should always be the date */
 .blogPost.light > :nth-child(2) {
-  margin: 1vh;
+  margin-top: 0;
   color: #444;
 }
 
 .blogPost > p {
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+.blogPost > p {
+  max-width: 80ch;
 }
 
 .blogPost > :first-child {
