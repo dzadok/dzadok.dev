@@ -34,16 +34,41 @@ header {
 svg.light > g > path {
   fill: black;
 }
+
 svg.dark > g > path {
   fill: white;
 }
 
-#Moon.dark {
-  box-shadow: inset 7px 2px 1px hsla(0, 0%, 80%, 50%);
+#toggle {
+  margin-top: 0.75rem;
+  width: 2.5rem;
+  height: 1.25rem;
+  display: inline-block;
+  background-color: grey;
+  border-radius: 1rem;
+  transition: all 250ms;
 }
 
-#Sun.light {
-  /* box-shadow: inset 3px 3px 3px 3px hsla(51, 100%, 50%, 50%); */
+#toggle::before {
+  content: "";
+  background-color: darkgrey;
+  height: 1.25rem;
+  width: 1.25rem;
   border-radius: 50%;
-  box-shadow: 0 0 50px #fff;
+  display: inline-block;
+  transition: all 250ms;
+}
+
+.dark > #toggle::before {
+  transform: translateX(1.25rem);
+  background-image: radial-gradient(circle at right, silver, black);
+}
+
+.light > #toggle::before {
+  background-image: radial-gradient(circle at left, yellow, black);
+}
+
+#darkModeToggle {
+  margin-top: 0.5rem;
+  display: flex;
 }

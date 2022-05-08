@@ -12,6 +12,8 @@ export default function DarkModeToggle() {
       aria-checked
       aria-label="Dark Mode Toggle"
       role={"switch"}
+      className={theme}
+      id="darkModeToggle"
       onClick={() => {
         const newTheme = theme === "dark" ? "light" : "dark";
         updateTheme(newTheme);
@@ -19,8 +21,9 @@ export default function DarkModeToggle() {
         setLightOrDarkMode();
       }}
     >
-      <Sun height="3rem" width="3rem" className={theme}></Sun>
-      <Moon height="3rem" width="3rem" className={theme}></Moon>
+      <Sun height="2.5rem" width="2.5rem" className={theme}></Sun>
+      <span id="toggle"></span>
+      <Moon height="2.5rem" width="2.5rem" className={theme}></Moon>
     </div>
   );
 }
