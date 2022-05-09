@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { React, useContext } from "react";
 import { setLightOrDarkMode, ThemeContext } from "../lightOrDark";
 import Moon from "./Icons/Moon";
 import Sun from "./Icons/Sun";

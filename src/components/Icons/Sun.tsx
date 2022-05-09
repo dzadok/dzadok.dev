@@ -1,3 +1,4 @@
+import { React } from "react";
 // https://tabler-icons.io/i/sun
 export default function Sun(props: React.SVGProps<SVGSVGElement>) {
   return (

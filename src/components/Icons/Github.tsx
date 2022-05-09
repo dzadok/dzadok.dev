@@ -1,4 +1,4 @@
-import { theme } from "../../lightOrDark";
+import { React } from "react";
 
 export default function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

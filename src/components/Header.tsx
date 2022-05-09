@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { React, useContext } from "react";
 import { ThemeContext } from "../lightOrDark";
 import DarkModeToggle from "./DarkModeToggle";
 import "./Header.css";

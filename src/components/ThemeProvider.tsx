@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode, useState } from "react";
+import { React, PropsWithChildren, ReactNode, useState } from "react";
 import { lightOrDark, ThemeContext } from "../lightOrDark";
 
 export default function ThemeProvider(children: PropsWithChildren<ReactNode>) {
