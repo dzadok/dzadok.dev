@@ -17,6 +17,13 @@ header {
 .links {
   font-size: 1.5rem;
 }
+.links > a > svg.light {
+  color: black;
+}
+
+.links > a > svg.dark {
+  color: white;
+}
 
 .linkedIn-logo {
   background: white;
