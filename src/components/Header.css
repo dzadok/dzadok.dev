@@ -2,14 +2,10 @@ header {
   position: fixed;
   width: 100vw;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 2px;
-}
-
-@media (min-width: 640px) {
-  header {
-    flex-direction: row;
-  }
 }
 
 .myName {
@@ -43,7 +39,7 @@ svg.dark > g > path {
   margin-top: 0.75rem;
   width: 2.5rem;
   height: 1.25rem;
-  display: inline-block;
+  display: inline-flex;
   background-color: grey;
   border-radius: 1rem;
   transition: all 250ms;
