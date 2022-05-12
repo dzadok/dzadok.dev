@@ -1,10 +1,10 @@
 import ReactMarkdown from "react-markdown";
 import { Dayjs } from "dayjs";
 import { ThemeContext } from "../lightOrDark";
-import { React, useContext } from "react";
+import React from "react";
 
 export function convertMarkdown(markdown: string) {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = React.useContext(ThemeContext);
   return (
     <article className={`blogPost ${theme}`} key={markdown.split("\n")[1]}>
       <ReactMarkdown>{markdown}</ReactMarkdown>

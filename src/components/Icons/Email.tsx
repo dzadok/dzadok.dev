@@ -1,9 +1,10 @@
-import { React, useContext } from "react";
+import React from "react";
 import { ThemeContext } from "../../lightOrDark";
+import { IconProps } from "./IconProps";
 
 // https://tabler-icons.io/i/mail
-export default function Email(props: React.SVGProps<SVGSVGElement>) {
-  const { theme } = useContext(ThemeContext);
+export default function Email(props: IconProps) {
+  const { theme } = React.useContext(ThemeContext);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { addPostDate, convertMarkdown } from "./Markdown";
 import "./Blog.css";
-import { React } from "react";
+import React from "react";
 
 function GetBlogPosts() {
   const blogPosts: Record<string, string> = import.meta.glob(

@@ -1,4 +1,4 @@
-import { React, useContext } from "react";
+import React from "react";
 import { ThemeContext } from "../lightOrDark";
 import DarkModeToggle from "./DarkModeToggle";
 import "./Header.css";
@@ -7,7 +7,7 @@ import GithubIcon from "./Icons/Github";
 import LinkedInIcon from "./Icons/Linkedin";
 
 export default function Header() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = React.useContext(ThemeContext);
   return (
     <header className={theme}>
       <div className="myName">David Zadok</div>

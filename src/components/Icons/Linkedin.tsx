@@ -1,10 +1,12 @@
-import { React } from "react";
-export default function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
+import React from "react";
+import { IconProps } from "./IconProps";
+
+export default function LinkedInIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="2em"
-      height="2em"
+      width={props.width ?? "2em"}
+      height={props.height ?? "2em"}
       viewBox="0 0 34 34"
       className="linkedIn-logo"
     >

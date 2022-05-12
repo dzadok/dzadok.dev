@@ -1,6 +1,8 @@
-import { React } from "react";
+import React from "react";
+import { IconProps } from "./IconProps";
+
 // https://tabler-icons.io/i/moon
-export default function Moon(props: React.SVGProps<SVGSVGElement>) {
+export default function Moon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

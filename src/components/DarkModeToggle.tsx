@@ -1,10 +1,10 @@
-import { React, useContext } from "react";
+import React from "react";
 import { setLightOrDarkMode, ThemeContext } from "../lightOrDark";
 import Moon from "./Icons/Moon";
 import Sun from "./Icons/Sun";
 
 export default function DarkModeToggle() {
-  const { theme, updateTheme } = useContext(ThemeContext);
+  const { theme, updateTheme } = React.useContext(ThemeContext);
 
   return (
     <div
