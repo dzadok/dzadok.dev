@@ -23,7 +23,7 @@ specifiers:
   eslint: ^8.15.0
   eslint-plugin-react: ^7.29.4
   firebase: ^9.6.11
-  marked: ^0.7.0
+  marked: ^4.0.10
   prettier: ^2.6.2
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -62,7 +62,7 @@ devDependencies:
   '@vitejs/plugin-react': 1.3.1
   cypress: 9.5.4
   eslint-plugin-react: 7.29.4_eslint@8.15.0
-  marked: 0.7.0
+  marked: 4.0.10
   prettier: 2.6.2
   typescript: 4.6.3
   vite: 2.9.5
@@ -4109,9 +4109,9 @@ packages:
       object-visit: 1.0.1
     dev: true
 
-  /marked/0.7.0:
-    resolution: {integrity: sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==}
-    engines: {node: '>=0.10.0'}
+  /marked/4.0.10:
+    resolution: {integrity: sha512-+QvuFj0nGgO970fySghXGmuw+Fd0gD2x3+MqCWLIPf5oxdv1Ka6b2q+z9RP01P/IaKPMEramy+7cNy/Lw8c3hw==}
+    engines: {node: '>= 12'}
     hasBin: true
     dev: true
 
