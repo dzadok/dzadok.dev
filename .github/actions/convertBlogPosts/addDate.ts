@@ -5,5 +5,5 @@ export default function addDate(
   date: string
 ): Record<string, any> {
   const jsonObj = json ? JSON.parse(json) : {};
-  return { ...jsonObj, date: Dayjs(date) };
+  return { ...jsonObj, date: Dayjs(date).toISOString() };
 }

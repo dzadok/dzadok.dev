@@ -3,7 +3,7 @@ import * as fs from "node:fs";
 import dayjs from "dayjs";
 
 const MD_FILE_NAME = "./.20000101.md";
-const MD_DATE = dayjs("20000101");
+const MD_DATE = new Date("2000-01-01T00:00").toISOString();
 
 beforeAll(() => {
   fs.writeFileSync(MD_FILE_NAME, "#Title\n\n##Heading\n\nContent\n");

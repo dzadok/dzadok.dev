@@ -37,9 +37,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const convertBlogPost_1 = __importDefault(require("./convertBlogPost"));
 const fs = __importStar(require("node:fs"));
-const dayjs_1 = __importDefault(require("dayjs"));
 const MD_FILE_NAME = "./.20000101.md";
-const MD_DATE = (0, dayjs_1.default)("20000101");
+const MD_DATE = new Date("2000-01-01T00:00").toISOString();
 beforeAll(() => {
     fs.writeFileSync(MD_FILE_NAME, "#Title\n\n##Heading\n\nContent\n");
 });
