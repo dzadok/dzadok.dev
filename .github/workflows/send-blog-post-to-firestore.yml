@@ -17,7 +17,7 @@ jobs:
           CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$)
           echo "Changed_md=$CHANGED" >> $GITHUB_ENV
       - name: Convert markdown
-        run: convertBlogPosts
+        uses: ../actions/convertBlogPosts
         with:
           files: env.Changed_md
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DZADOK_DEV }}"
