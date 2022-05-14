@@ -10,8 +10,12 @@ interface BlogPost {
 }
 
 export default async function run() {
+  if (process.env.firebaseServiceAccount === undefined) {
+    core.setFailed("Firebase key not found.");
+    throw new Error("Firebase key not found");
+  }
   const firestore = new Firestore({
-    keyFilename: core.getInput("firebaseServiceAccount"),
+    keyFilename: process.env.firebaseServiceAccount,
     projectId: "dzadok-dev",
   });
 
