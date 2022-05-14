@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const convertBlogPost_1 = require("./convertBlogPost");
-const fs = require("node:fs");
-const dayjs = require("dayjs");
+import convertBlogPost from "./convertBlogPost";
+import * as fs from "node:fs";
+import * as dayjs from "dayjs";
 const MD_FILE_NAME = "./.20000101.md";
 const MD_DATE = dayjs("20000101");
 beforeAll(() => {
@@ -13,18 +11,18 @@ afterAll(() => {
 });
 describe("convert a blog post to json", () => {
     it("throws on a non-existent file", () => {
-        expect(() => (0, convertBlogPost_1.default)("a")).rejects.toThrowError("ENOENT");
+        expect(() => convertBlogPost("a")).rejects.toThrowError("ENOENT");
     });
     it("generates wellformed json", async () => {
-        expect(async () => await (0, convertBlogPost_1.default)(MD_FILE_NAME)).not.toThrow();
+        expect(async () => await convertBlogPost(MD_FILE_NAME)).not.toThrow();
     });
     it("inserts the date", async () => {
-        expect((await (0, convertBlogPost_1.default)(MD_FILE_NAME)).date).toEqual(MD_DATE);
+        expect((await convertBlogPost(MD_FILE_NAME)).date).toEqual(MD_DATE);
     });
     it("has the right title", async () => {
-        expect((await (0, convertBlogPost_1.default)(MD_FILE_NAME)).title).toEqual("Title");
+        expect((await convertBlogPost(MD_FILE_NAME)).title).toEqual("Title");
     });
     it("has the right content", async () => {
-        expect((await (0, convertBlogPost_1.default)(MD_FILE_NAME)).content).toEqual("##Heading\n\nContent\n");
+        expect((await convertBlogPost(MD_FILE_NAME)).content).toEqual("##Heading\n\nContent\n");
     });
 });

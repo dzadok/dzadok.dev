@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "CommonJS",
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"],
     "types": ["jest", "node"],
