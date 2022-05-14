@@ -5,7 +5,7 @@ import { Dayjs } from "dayjs";
 
 interface BlogPost {
   title: string;
-  date: Dayjs;
+  date: string;
   content: string;
 }
 
@@ -27,9 +27,7 @@ export default async function run() {
   for (const file of changedFiles) {
     const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
     try {
-      const docRef = firestore
-        .collection("blogPosts")
-        .doc(post.date.format("YYYY-DD-MM"));
+      const docRef = firestore.collection("blogPosts").doc(post.date);
       batch.set(docRef, post);
     } catch (err: any) {
       core.setFailed(err);

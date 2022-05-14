@@ -54,9 +54,7 @@ function run() {
         for (const file of changedFiles) {
             const post = (yield (0, convertBlogPost_1.default)(file));
             try {
-                const docRef = firestore
-                    .collection("blogPosts")
-                    .doc(post.date.format("YYYY-DD-MM"));
+                const docRef = firestore.collection("blogPosts").doc(post.date);
                 batch.set(docRef, post);
             }
             catch (err) {
