@@ -24,7 +24,7 @@ export default async function run() {
   core.info(`Found  ${changedFiles.join(", ")}`);
   const batch = firestore.batch();
 
-  for (const file in changedFiles) {
+  for (const file of changedFiles) {
     const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
     try {
       const docRef = firestore

@@ -51,7 +51,7 @@ function run() {
         }
         core.info(`Found  ${changedFiles.join(", ")}`);
         const batch = firestore.batch();
-        for (const file in changedFiles) {
+        for (const file of changedFiles) {
             const post = (yield (0, convertBlogPost_1.default)(file));
             try {
                 const docRef = firestore
