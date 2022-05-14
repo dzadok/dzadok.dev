@@ -1,0 +1,12 @@
+name: Convert Blog Posts
+description: Converts md blogPosts in json ready to send to Firestore
+inputs:
+  files:
+    description: list of files to Convert
+    required: true
+  firebaseServiceAccount:
+    description: firebaseServiceAccount
+    required: true
+runs:
+  using: node16
+  main: ./main.js

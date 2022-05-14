@@ -1,0 +1,23 @@
+name: Send Blog Post to Firestore
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - content/**/*.md
+jobs:
+  find_blog_posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Get changed markdown files
+        run: |
+          CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$)
+          echo "Changed_md=$CHANGED" >> $GITHUB_ENV
+      - name: Convert markdown
+        run: convertBlogPosts
+        with:
+          files: env.Changed_md
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DZADOK_DEV }}"

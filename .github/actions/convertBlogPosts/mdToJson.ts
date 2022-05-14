@@ -1,8 +1,8 @@
-const TITLE_REGEXP = /^\#[^\#].*$/gm;
+const TITLE_REGEXP = /^#[^#].*$/gm;
 
-export default function mdToJson(md: string): Record<any, any> {
+export default function mdToJson(md: string): string {
   const titles = md.split("\n").filter((x) => TITLE_REGEXP.test(x));
-  const title = titles[0].substring(1);
+  const title = titles[0]?.substring(1);
 
   const content = md
     .split("\n")
@@ -10,5 +10,5 @@ export default function mdToJson(md: string): Record<any, any> {
     .join("\n")
     .substring(1);
 
-  return { title, content };
+  return JSON.stringify({ title, content });
 }

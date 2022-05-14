@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import { createServer } from "vite";
 import { startDevServer } from "@cypress/vite-dev-server";
 
 // ***********************************************************
