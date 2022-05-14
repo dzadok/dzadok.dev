@@ -45,7 +45,7 @@ function run() {
             projectId: "dzadok-dev",
         });
         const changedFiles = core.getInput("files").split(",");
-        console.log("Found ", ...changedFiles);
+        core.info(`Found  ${changedFiles.join(", ")}`);
         const batch = firestore.batch();
         for (const file in changedFiles) {
             const post = (yield (0, convertBlogPost_1.default)(file));
@@ -53,13 +53,13 @@ function run() {
                 batch.set(firestore.doc(`blog/${post.date.format("YYYY-DD-MM")}`), post);
             }
             catch (err) {
-                console.error(err);
+                core.setFailed(err);
             }
         }
         batch.commit().then(() => {
-            console.log("Successfully updated Firestore.");
+            core.notice("Successfully updated Firestore.");
         }, (reason) => {
-            console.error(reason);
+            core.setFailed(reason);
         });
     });
 }

@@ -17,24 +17,24 @@ export default async function run() {
 
   const changedFiles = core.getInput("files").split(",");
 
-  console.log("Found ", ...changedFiles);
+  core.info(`Found  ${changedFiles.join(", ")}`);
   const batch = firestore.batch();
 
   for (const file in changedFiles) {
     const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
     try {
       batch.set(firestore.doc(`blog/${post.date.format("YYYY-DD-MM")}`), post);
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
+      core.setFailed(err);
     }
   }
 
   batch.commit().then(
     () => {
-      console.log("Successfully updated Firestore.");
+      core.notice("Successfully updated Firestore.");
     },
     (reason) => {
-      console.error(reason);
+      core.setFailed(reason);
     }
   );
 }
