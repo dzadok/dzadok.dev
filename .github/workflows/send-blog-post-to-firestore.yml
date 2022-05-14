@@ -12,6 +12,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.0
+      - run: cd .github && pnpm install
       - name: Get changed markdown files
         run: |
           CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$)
