@@ -45,7 +45,7 @@ function run() {
             throw new Error("Firebase key not found");
         }
         const firestore = new firestore_1.Firestore({
-            keyFilename: process.env.firebaseServiceAccount,
+            credentials: JSON.parse(core.getInput("firebaseServiceAccount")),
             projectId: "dzadok-dev",
         });
         const changedFiles = core.getInput("files").split(",");

@@ -15,7 +15,7 @@ export default async function run() {
     throw new Error("Firebase key not found");
   }
   const firestore = new Firestore({
-    keyFilename: process.env.firebaseServiceAccount,
+    credentials: JSON.parse(core.getInput("firebaseServiceAccount")),
     projectId: "dzadok-dev",
   });
 
