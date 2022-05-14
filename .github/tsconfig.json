@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types"],
-    "types": ["jest", "node"],
-    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
     "strict": true,
-    "skipLibCheck": true
+    "target": "es6",
+    "types": ["jest"]
   }
 }

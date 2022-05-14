@@ -18,5 +18,6 @@
     "types": ["cypress"]
   },
   "include": ["src", "tasks", "cypress"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": [".github"]
 }

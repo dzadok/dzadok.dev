@@ -1,8 +1,11 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-const config = {
-  preset: "ts-jest",
+module.exports = {
+  clearMocks: true,
+  moduleFileExtensions: ["js", "ts"],
   testEnvironment: "node",
-  testPathIgnorePatterns: ["dist", "node_modules"],
+  testMatch: ["**/*.test.js", "**/*.test.ts"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
+  transform: {
+    "^.+\\.ts$": "ts-jest",
+  },
+  verbose: true,
 };
-
-export default config;

@@ -1,6 +1,6 @@
 import convertBlogPost from "./convertBlogPost";
 import * as fs from "node:fs";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 
 const MD_FILE_NAME = "./.20000101.md";
 const MD_DATE = dayjs("20000101");
