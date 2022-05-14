@@ -44,12 +44,23 @@ function run() {
             keyFilename: core.getInput("firebaseServiceAccount"),
             projectId: "dzadok-dev",
         });
+        const changedFiles = core.getInput("files").split(",");
+        console.log("Found ", ...changedFiles);
         const batch = firestore.batch();
-        for (const file in core.getInput("files").split(",")) {
-            const post = yield (0, convertBlogPost_1.default)(file);
-            batch.set(firestore.doc(`blog/${post.date}`), post);
+        for (const file in changedFiles) {
+            const post = (yield (0, convertBlogPost_1.default)(file));
+            try {
+                batch.set(firestore.doc(`blog/${post.date.format("YYYY-DD-MM")}`), post);
+            }
+            catch (err) {
+                console.error(err);
+            }
         }
-        yield batch.commit();
+        batch.commit().then(() => {
+            console.log("Successfully updated Firestore.");
+        }, (reason) => {
+            console.error(reason);
+        });
     });
 }
 exports.default = run;
