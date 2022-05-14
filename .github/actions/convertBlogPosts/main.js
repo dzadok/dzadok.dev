@@ -7,7 +7,7 @@ export default async function run() {
         projectId: "dzadok-dev",
     });
     const batch = firestore.batch();
-    for (const file in core.getInput("files").split("\n")) {
+    for (const file in core.getInput("files").split(",")) {
         const post = await convertBlogPost(file);
         batch.set(firestore.doc(`blog/${post.date}`), post);
     }

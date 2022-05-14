@@ -18,7 +18,7 @@ jobs:
       - run: cd .github && pnpm install
       - name: Get changed markdown files
         run: |
-          CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$)
+          CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$ | paste -s -d',')
           echo "Changed_md=$CHANGED" >> $GITHUB_ENV
       - name: Convert markdown
         uses: ./.github/actions/convertBlogPosts
