@@ -1,14 +1,12 @@
-const TITLE_REGEXP = /^#[^#].*$/gm;
-
 export default function mdToJson(md: string): string {
-  const titles = md.split("\n").filter((x) => TITLE_REGEXP.test(x));
-  const title = titles[0]?.substring(1);
+  const lines = md.split("\n");
 
-  const content = md
-    .split("\n")
-    .filter((x) => !TITLE_REGEXP.test(x))
-    .join("\n")
-    .substring(1);
+  // Markdown title without the #
+  const title = lines[0]?.substring(1);
 
+  // Check if there was a blank line after the title
+  const startOfContent = lines[1] === "" ? 2 : 1;
+
+  const content = lines.slice(startOfContent, md.length).join("\n");
   return JSON.stringify({ title, content });
 }
