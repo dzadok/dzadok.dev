@@ -45,3 +45,5 @@ export default async function run() {
     }
   );
 }
+
+run();
