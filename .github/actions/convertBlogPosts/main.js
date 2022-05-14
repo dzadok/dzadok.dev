@@ -49,7 +49,7 @@ function run() {
             const post = yield (0, convertBlogPost_1.default)(file);
             batch.set(firestore.doc(`blog/${post.date}`), post);
         }
-        batch.commit();
+        yield batch.commit();
     });
 }
 exports.default = run;

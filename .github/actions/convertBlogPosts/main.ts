@@ -14,5 +14,5 @@ export default async function run() {
     batch.set(firestore.doc(`blog/${post.date}`), post);
   }
 
-  batch.commit();
+  await batch.commit();
 }

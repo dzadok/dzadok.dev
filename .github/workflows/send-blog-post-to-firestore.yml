@@ -20,7 +20,7 @@ jobs:
         run: |
           CHANGED=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep ^content/.*.md$ | paste -s -d',')
           echo "Changed_md=$CHANGED" >> $GITHUB_ENV
-      - name: Convert markdown
+      - name: Convert markdown and send to Firestore
         uses: ./.github/actions/convertBlogPosts
         with:
           files: env.Changed_md
