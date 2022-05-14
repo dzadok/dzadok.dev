@@ -45,12 +45,19 @@ function run() {
             projectId: "dzadok-dev",
         });
         const changedFiles = core.getInput("files").split(",");
+        if (changedFiles.length === 0) {
+            core.setFailed("No files found.");
+            throw new Error("No files found.");
+        }
         core.info(`Found  ${changedFiles.join(", ")}`);
         const batch = firestore.batch();
         for (const file in changedFiles) {
             const post = (yield (0, convertBlogPost_1.default)(file));
             try {
-                batch.set(firestore.doc(`blog/${post.date.format("YYYY-DD-MM")}`), post);
+                const docRef = firestore
+                    .collection("blogPosts")
+                    .doc(post.date.format("YYYY-DD-MM"));
+                batch.set(docRef, post);
             }
             catch (err) {
                 core.setFailed(err);

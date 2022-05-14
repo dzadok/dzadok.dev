@@ -16,6 +16,10 @@ export default async function run() {
   });
 
   const changedFiles = core.getInput("files").split(",");
+  if (changedFiles.length === 0) {
+    core.setFailed("No files found.");
+    throw new Error("No files found.");
+  }
 
   core.info(`Found  ${changedFiles.join(", ")}`);
   const batch = firestore.batch();
@@ -23,7 +27,10 @@ export default async function run() {
   for (const file in changedFiles) {
     const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
     try {
-      batch.set(firestore.doc(`blog/${post.date.format("YYYY-DD-MM")}`), post);
+      const docRef = firestore
+        .collection("blogPosts")
+        .doc(post.date.format("YYYY-DD-MM"));
+      batch.set(docRef, post);
     } catch (err: any) {
       core.setFailed(err);
     }
