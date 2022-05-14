@@ -40,10 +40,6 @@ const convertBlogPost_1 = __importDefault(require("./convertBlogPost"));
 const firestore_1 = require("@google-cloud/firestore");
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        if (process.env.firebaseServiceAccount === undefined) {
-            core.setFailed("Firebase key not found.");
-            throw new Error("Firebase key not found");
-        }
         const firestore = new firestore_1.Firestore({
             credentials: JSON.parse(core.getInput("firebaseServiceAccount")),
             projectId: "dzadok-dev",

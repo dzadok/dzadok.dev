@@ -4,6 +4,10 @@ inputs:
   files:
     description: list of files to Convert
     required: true
+  firebaseServiceAccount:
+    description: service account for uploading to Firestore
+    required: true
+
 runs:
   using: node16
   main: "main.js"
