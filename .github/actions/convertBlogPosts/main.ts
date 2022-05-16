@@ -1,7 +1,6 @@
 import * as core from "@actions/core";
 import convertBlogPost from "./convertBlogPost";
 import { Firestore } from "@google-cloud/firestore";
-import { Dayjs } from "dayjs";
 
 interface BlogPost {
   title: string;
@@ -21,17 +20,24 @@ export default async function run() {
     throw new Error("No files found.");
   }
 
+  const idRef = firestore.collection("BlogPostX").doc("byDate");
   core.info(`Found  ${changedFiles.join(", ")}`);
+
+  const ids = (await idRef.get()).data()?.["ids"];
+  const blogIds: string[] = ids ? ids : [];
+
   const batch = firestore.batch();
 
-  for (const file of changedFiles) {
-    const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
-    try {
+  try {
+    for (const file of changedFiles) {
+      const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
+      ids.push(post.date);
       const docRef = firestore.collection("blogPosts").doc(post.date);
       batch.set(docRef, post);
-    } catch (err: any) {
-      core.setFailed(err);
     }
+    batch.set(idRef, blogIds);
+  } catch (err: any) {
+    core.setFailed(err);
   }
 
   batch.commit().then(

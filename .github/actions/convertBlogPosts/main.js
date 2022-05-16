@@ -39,6 +39,7 @@ const core = __importStar(require("@actions/core"));
 const convertBlogPost_1 = __importDefault(require("./convertBlogPost"));
 const firestore_1 = require("@google-cloud/firestore");
 function run() {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const firestore = new firestore_1.Firestore({
             credentials: JSON.parse(core.getInput("firebaseServiceAccount")),
@@ -49,17 +50,22 @@ function run() {
             core.setFailed("No files found.");
             throw new Error("No files found.");
         }
+        const idRef = firestore.collection("BlogPostX").doc("byDate");
         core.info(`Found  ${changedFiles.join(", ")}`);
+        const ids = (_a = (yield idRef.get()).data()) === null || _a === void 0 ? void 0 : _a["ids"];
+        const blogIds = ids ? ids : [];
         const batch = firestore.batch();
-        for (const file of changedFiles) {
-            const post = (yield (0, convertBlogPost_1.default)(file));
-            try {
+        try {
+            for (const file of changedFiles) {
+                const post = (yield (0, convertBlogPost_1.default)(file));
+                ids.push(post.date);
                 const docRef = firestore.collection("blogPosts").doc(post.date);
                 batch.set(docRef, post);
             }
-            catch (err) {
-                core.setFailed(err);
-            }
+            batch.set(idRef, blogIds);
+        }
+        catch (err) {
+            core.setFailed(err);
         }
         batch.commit().then(() => {
             core.notice("Successfully updated Firestore.");
