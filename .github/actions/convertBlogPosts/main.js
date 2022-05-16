@@ -53,7 +53,7 @@ function run() {
         const idRef = firestore.collection("BlogPostX").doc("byDate");
         core.info(`Found  ${changedFiles.join(", ")}`);
         const ids = (_a = (yield idRef.get()).data()) === null || _a === void 0 ? void 0 : _a["ids"];
-        const blogIds = ids ? ids : [];
+        const blogIds = ids !== undefined ? ids : [];
         const batch = firestore.batch();
         try {
             for (const file of changedFiles) {

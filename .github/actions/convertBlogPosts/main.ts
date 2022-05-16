@@ -24,7 +24,7 @@ export default async function run() {
   core.info(`Found  ${changedFiles.join(", ")}`);
 
   const ids = (await idRef.get()).data()?.["ids"];
-  const blogIds: string[] = ids ? ids : [];
+  const blogIds: string[] = ids !== undefined ? ids : [];
 
   const batch = firestore.batch();
 
