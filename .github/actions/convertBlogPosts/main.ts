@@ -35,7 +35,7 @@ export default async function run() {
       const docRef = firestore.collection("blogPosts").doc(post.date);
       batch.set(docRef, post);
     }
-    batch.set(idRef, blogIds);
+    batch.set(idRef, { ids: blogIds });
   } catch (err: any) {
     core.setFailed(err);
   }
