@@ -58,3 +58,17 @@
 .blogPost > :first-child {
   margin-top: 0;
 }
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid hsl(0, 0%, 50%);
+  display: inline-block;
+}
+
+.blogPost.light > p > code {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.blogPost.dark > p > code {
+  background-color: hsl(0, 0%, 20%);
+}
