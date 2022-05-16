@@ -58,10 +58,14 @@ function run() {
         try {
             for (const file of changedFiles) {
                 const post = (yield (0, convertBlogPost_1.default)(file));
-                blogIds.push(post.date);
-                const docRef = firestore.collection("blogPosts").doc(post.date);
+                const id = post.date.substring(0, 10);
+                if (!blogIds.includes(id)) {
+                    blogIds.push(id);
+                }
+                const docRef = firestore.collection("blogPosts").doc(id);
                 batch.set(docRef, post);
             }
+            blogIds.sort();
             batch.set(idRef, { ids: blogIds });
         }
         catch (err) {
