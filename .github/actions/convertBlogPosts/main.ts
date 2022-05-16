@@ -31,7 +31,7 @@ export default async function run() {
   try {
     for (const file of changedFiles) {
       const post: BlogPost = (await convertBlogPost(file)) as BlogPost;
-      ids.push(post.date);
+      blogIds.push(post.date);
       const docRef = firestore.collection("blogPosts").doc(post.date);
       batch.set(docRef, post);
     }
