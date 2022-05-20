@@ -1,7 +1,7 @@
 #blog {
   overflow: auto;
   position: fixed;
-  bottom: 0;
+  bottom: 6rem;
   top: 8rem;
   margin-left: 2rem;
   width: calc(100% - 2rem);
@@ -28,6 +28,7 @@
 .blogPost > h1 {
   margin-top: 2rem;
   margin-bottom: 0;
+  bottom: 1rem;
 }
 
 .blogPost > h3 {
@@ -71,4 +72,16 @@ code {
 
 .blogPost.dark > p > code {
   background-color: hsl(0, 0%, 20%);
+}
+
+#blogNav {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+#blogNav > button {
+  padding: 1rem;
+  margin: 1rem;
+  width: 8rem;
 }
