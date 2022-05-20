@@ -42,7 +42,7 @@ function getLastPostFromLocalStorage(dft = 0) {
 
 export default function Blog() {
   const { theme } = useContext(ThemeContext);
-  const [blogPost, updateBlogPost] = useState(
+  const [blogPosts, updateBlogPosts] = useState(
     new Array<DocumentSnapshot<DocumentData>>()
   );
   const [postId, updatePostId] = useState(getLastPostFromLocalStorage(0));
@@ -65,19 +65,30 @@ export default function Blog() {
   }
 
   function lastPost() {
-    const newId = blogPost.length - 1;
+    const newId = blogPosts.length - 1;
     localStorage.setItem("blogPostId", newId.toString());
     updatePostId(newId);
   }
 
   useEffect(() => {
     GetBlogPosts().then((posts) => {
-      updateBlogPost(posts);
+      updateBlogPosts(posts);
     });
   }, []);
+
+  const blogPost =
+    blogPosts.length > 0 ? (
+      <BlogPost
+        lightOrDarkTheme={theme}
+        blogPost={blogPosts[postId]}
+      ></BlogPost>
+    ) : (
+      "Loading"
+    );
+
   return (
     <section id="blog">
-      <BlogPost lightOrDarkTheme={theme} blogPost={blogPost[postId]}></BlogPost>
+      {blogPost}
       <nav id="blogNav">
         <button onClick={firstPost} disabled={postId === 0}>
           First
@@ -85,10 +96,10 @@ export default function Blog() {
         <button onClick={prevPost} disabled={postId === 0}>
           Previous
         </button>
-        <button onClick={nextPost} disabled={postId + 1 >= blogPost.length}>
+        <button onClick={nextPost} disabled={postId + 1 >= blogPosts.length}>
           Next
         </button>
-        <button onClick={lastPost} disabled={postId + 1 >= blogPost.length}>
+        <button onClick={lastPost} disabled={postId + 1 >= blogPosts.length}>
           Last
         </button>
       </nav>

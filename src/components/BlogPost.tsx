@@ -8,8 +8,8 @@ export default function BlogPost(props: {
   lightOrDarkTheme: theme;
   blogPost: DocumentSnapshot<DocumentData>;
 }) {
-  console.log(props);
   const date = props.blogPost.get("date").substring(0, 10);
+
   return (
     <article className={`blogPost ${props.lightOrDarkTheme}`} key={date}>
       <h1>{props.blogPost.get("title")}</h1>
