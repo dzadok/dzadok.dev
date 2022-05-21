@@ -1,7 +1,7 @@
 #blog {
   overflow: auto;
   position: fixed;
-  bottom: 3vw;
+  bottom: 3rem;
   top: 8rem;
   margin-left: 2rem;
   width: calc(100% - 2rem);
