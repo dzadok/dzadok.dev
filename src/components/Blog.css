@@ -1,7 +1,7 @@
 #blog {
   overflow: auto;
   position: fixed;
-  bottom: 6rem;
+  bottom: 3vw;
   top: 8rem;
   margin-left: 2rem;
   width: calc(100% - 2rem);
@@ -81,7 +81,8 @@ code {
 }
 
 #blogNav > button {
-  padding: 1rem;
-  margin: 1rem;
-  width: 8rem;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin: 1vw;
+  width: auto;
 }
