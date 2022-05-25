@@ -89,7 +89,7 @@ export default function Blog() {
   return (
     <section id="blog">
       {blogPost}
-      <nav id="blogNav">
+      <nav id="blogNav" className={theme}>
         <button onClick={firstPost} disabled={postId === 0}>
           First
         </button>

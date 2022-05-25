@@ -86,3 +86,23 @@ code {
   margin: 1vw;
   width: auto;
 }
+
+#blogNav.dark > button {
+  color: white;
+  background-color: hsl(288, 26%, 30%);
+}
+
+#blogNav.dark > button:disabled {
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(288, 26%, 15%);
+}
+
+#blogNav.light > button {
+  color: black;
+  background-color: hsl(288, 26%, 70%);
+}
+
+#blogNav.light > button:disabled {
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(288, 26%, 85%);
+}

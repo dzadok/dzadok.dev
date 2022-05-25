@@ -15,4 +15,5 @@ plugins:
   - react
   - "@typescript-eslint"
   - react-hooks
+  - jsx-a11y
 rules: {}
