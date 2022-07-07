@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@opentelemetry/api": "^1.0.4",
-    "@opentelemetry/auto-instrumentations-web": "^0.28.0",
+    "@opentelemetry/auto-instrumentations-web": "^0.29.0",
     "@opentelemetry/context-zone": "^1.0.1",
     "@opentelemetry/exporter-collector": "^0.25.0",
     "@opentelemetry/instrumentation": "^0.29.0",
