@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@actions/core':
-    specifier: ^1.8.1
-    version: 1.8.1
+    specifier: ^1.9.1
+    version: 1.9.1
   '@actions/github':
     specifier: ^5.0.3
     version: 5.0.3
@@ -43,10 +43,11 @@ devDependencies:
 
 packages:
 
-  /@actions/core@1.8.1:
-    resolution: {integrity: sha512-LuFg2O/+rRrYxrdafnqH9mx6ADszKzQAhDuEhhMQIh47tsXzWkW4wXY5zvscqJ4KDywyJX0LA0pAESPLUjZXvw==}
+  /@actions/core@1.9.1:
+    resolution: {integrity: sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==}
     dependencies:
-      '@actions/http-client': 2.0.0
+      '@actions/http-client': 2.0.1
+      uuid: 8.3.2
     dev: false
 
   /@actions/github@5.0.3:
@@ -58,10 +59,6 @@ packages:
       '@octokit/plugin-rest-endpoint-methods': 5.13.0(@octokit/core@3.6.0)
     transitivePeerDependencies:
       - encoding
-    dev: false
-
-  /@actions/http-client@2.0.0:
-    resolution: {integrity: sha512-fm1+OPPey5ypgStT9K8zbBhICj4J4UV/TJIHDhuWlkb8KyJaAtjcZK184dTqul0dV0nPKX97FNtDXX20BTLXSA==}
     dev: false
 
   /@actions/http-client@2.0.1:
@@ -2819,6 +2816,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    dev: false
+
+  /uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
     dev: false
 
   /v8-compile-cache@2.3.0:
