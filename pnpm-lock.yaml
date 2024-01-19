@@ -10,7 +10,7 @@ dependencies:
     version: 1.0.4
   '@opentelemetry/auto-instrumentations-web':
     specifier: ^0.31.0
-    version: 0.31.2(@opentelemetry/api@1.0.4)(zone.js@0.11.4)
+    version: 0.31.2(@opentelemetry/api@1.0.4)(zone.js@0.11.7)
   '@opentelemetry/context-zone':
     specifier: ^1.0.1
     version: 1.0.1(@opentelemetry/api@1.0.4)
@@ -54,8 +54,8 @@ dependencies:
     specifier: ^8.0.2
     version: 8.0.2(@types/react@17.0.44)(react@17.0.2)
   zone.js:
-    specifier: 0.11.4
-    version: 0.11.4
+    specifier: 0.11.7
+    version: 0.11.7
 
 devDependencies:
   '@changesets/cli':
@@ -66,7 +66,7 @@ devDependencies:
     version: 5.12.4(@babel/core@7.17.9)(@types/react@17.0.44)(cypress@9.5.4)(react-dom@17.0.2)(react@17.0.2)
   '@cypress/vite-dev-server':
     specifier: ^2.2.2
-    version: 2.2.2(vite@2.9.16)
+    version: 2.2.2(vite@2.9.17)
   '@types/react':
     specifier: ^17.0.44
     version: 17.0.44
@@ -101,8 +101,8 @@ devDependencies:
     specifier: ^4.6.3
     version: 4.6.3
   vite:
-    specifier: ^2.9.16
-    version: 2.9.16
+    specifier: ^2.9.17
+    version: 2.9.17
   ws:
     specifier: ^8.5.0
     version: 8.5.0
@@ -720,14 +720,14 @@ packages:
       uuid: 8.3.2
     dev: true
 
-  /@cypress/vite-dev-server@2.2.2(vite@2.9.16):
+  /@cypress/vite-dev-server@2.2.2(vite@2.9.17):
     resolution: {integrity: sha512-02y/Fm0N+CQjKbSjjRtktPgPbp91kOvtc8+WW2l2odIYQkKlG6IOCpmgc898muW0lBAcCszdEIHR/ItdZDiYPw==}
     peerDependencies:
       vite: '>= 2.1.3'
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       get-port: 5.1.1
-      vite: 2.9.16
+      vite: 2.9.17
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1347,7 +1347,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /@opentelemetry/auto-instrumentations-web@0.31.2(@opentelemetry/api@1.0.4)(zone.js@0.11.4):
+  /@opentelemetry/auto-instrumentations-web@0.31.2(@opentelemetry/api@1.0.4)(zone.js@0.11.7):
     resolution: {integrity: sha512-00r9ykv42qUyo0JtaCYT1da/2SlgNEkXkzMmIOreg632QS5F4kD1bb90hrkByEwAPl0wcRElzfh0XReZ+m0gtQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1357,14 +1357,14 @@ packages:
       '@opentelemetry/instrumentation': 0.35.1(@opentelemetry/api@1.0.4)
       '@opentelemetry/instrumentation-document-load': 0.31.2(@opentelemetry/api@1.0.4)
       '@opentelemetry/instrumentation-fetch': 0.35.1(@opentelemetry/api@1.0.4)
-      '@opentelemetry/instrumentation-user-interaction': 0.32.4(@opentelemetry/api@1.0.4)(zone.js@0.11.4)
+      '@opentelemetry/instrumentation-user-interaction': 0.32.4(@opentelemetry/api@1.0.4)(zone.js@0.11.7)
       '@opentelemetry/instrumentation-xml-http-request': 0.35.1(@opentelemetry/api@1.0.4)
     transitivePeerDependencies:
       - supports-color
       - zone.js
     dev: false
 
-  /@opentelemetry/context-zone-peer-dep@1.0.1(@opentelemetry/api@1.0.4)(zone.js@0.11.6):
+  /@opentelemetry/context-zone-peer-dep@1.0.1(@opentelemetry/api@1.0.4)(zone.js@0.11.7):
     resolution: {integrity: sha512-rJJFXWjzuuVGOuy0gCUYhbQAFuGrMnNroV+cfm4n+c+H5ewW2yS9NwH+P07OKKCWJbpJpuwEVH2j+oEfHrtVyQ==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -1372,15 +1372,15 @@ packages:
       zone.js: ^0.10.2 || ^0.11.0
     dependencies:
       '@opentelemetry/api': 1.0.4
-      zone.js: 0.11.6
+      zone.js: 0.11.7
     dev: false
 
   /@opentelemetry/context-zone@1.0.1(@opentelemetry/api@1.0.4):
     resolution: {integrity: sha512-k1kyqCC75qfTpyr/V2HJIaorUKOLJ89unW4Pk9P9tV8e78vLC93olb1drRkXqmUzSzhEZBlvj1/sG1l7QQeeFw==}
     engines: {node: '>=8.0.0'}
     dependencies:
-      '@opentelemetry/context-zone-peer-dep': 1.0.1(@opentelemetry/api@1.0.4)(zone.js@0.11.6)
-      zone.js: 0.11.6
+      '@opentelemetry/context-zone-peer-dep': 1.0.1(@opentelemetry/api@1.0.4)(zone.js@0.11.7)
+      zone.js: 0.11.7
     transitivePeerDependencies:
       - '@opentelemetry/api'
     dev: false
@@ -1482,7 +1482,7 @@ packages:
       - supports-color
     dev: false
 
-  /@opentelemetry/instrumentation-user-interaction@0.32.4(@opentelemetry/api@1.0.4)(zone.js@0.11.4):
+  /@opentelemetry/instrumentation-user-interaction@0.32.4(@opentelemetry/api@1.0.4)(zone.js@0.11.7):
     resolution: {integrity: sha512-keFfcPuKhtfvHgBCG7VdlwRP7ezpWqbwCinTPRnMDRvFqcGVgk6HwPXkbMDs2CtQm+a1Hal7Tg93RYy82F6XEA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1493,7 +1493,7 @@ packages:
       '@opentelemetry/core': 1.15.1(@opentelemetry/api@1.0.4)
       '@opentelemetry/instrumentation': 0.40.0(@opentelemetry/api@1.0.4)
       '@opentelemetry/sdk-trace-web': 1.15.1(@opentelemetry/api@1.0.4)
-      zone.js: 0.11.4
+      zone.js: 0.11.7
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4019,12 +4019,12 @@ packages:
     resolution: {integrity: sha512-Q4ZuBAe2FUsKtyQJoQHlvP8OvBERxO3jEmy1I7hcRXcJBGGHFh/aJBswbXuS9sgrDH2QUO8ilkwNPHvHMd8clg==}
     dependencies:
       has: 1.0.3
-    dev: false
 
   /is-core-module@2.8.1:
     resolution: {integrity: sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==}
     dependencies:
       has: 1.0.3
+    dev: true
 
   /is-data-descriptor@0.1.4:
     resolution: {integrity: sha1-C17mSDiOLIYCgueT8YVv7D8wG1Y=}
@@ -4923,7 +4923,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.0
+      resolve: 1.22.2
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
     dev: true
@@ -5479,7 +5479,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       module-details-from-path: 1.0.3
-      resolve: 1.22.0
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5517,9 +5517,10 @@ packages:
     resolution: {integrity: sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.8.1
+      is-core-module: 2.12.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    dev: true
 
   /resolve@1.22.2:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
@@ -5528,7 +5529,6 @@ packages:
       is-core-module: 2.12.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-    dev: false
 
   /resolve@2.0.0-next.3:
     resolution: {integrity: sha512-W8LucSynKUIDu9ylraa7ueVZ7hc0uAgJBxVsQSKOXOyle8a93qXhcz+XAXZ8bIq2d6i4Ehddn6Evt+0/UwKk6Q==}
@@ -6317,8 +6317,8 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite@2.9.16:
-    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
+  /vite@2.9.17:
+    resolution: {integrity: sha512-XxcRzra6d7xrKXH66jZUgb+srThoPu+TLJc06GifUyKq9JmjHkc1Numc8ra0h56rju2jfVWw3B3fs5l3OFMvUw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -6335,7 +6335,7 @@ packages:
     dependencies:
       esbuild: 0.14.36
       postcss: 8.4.31
-      resolve: 1.22.0
+      resolve: 1.22.2
       rollup: 2.70.2
     optionalDependencies:
       fsevents: 2.3.2
@@ -6519,14 +6519,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zone.js@0.11.4:
-    resolution: {integrity: sha512-DDh2Ab+A/B+9mJyajPjHFPWfYU1H+pdun4wnnk0OcQTNjem1XQSZ2CDW+rfZEUDjv5M19SBqAkjZi0x5wuB5Qw==}
-    dependencies:
-      tslib: 2.3.1
-    dev: false
-
-  /zone.js@0.11.6:
-    resolution: {integrity: sha512-umJqFtKyZlPli669gB1gOrRE9hxUUGkZr7mo878z+NEBJZZixJkKeVYfnoLa7g25SseUDc92OZrMKKHySyJrFg==}
+  /zone.js@0.11.7:
+    resolution: {integrity: sha512-e39K2EdK5JfA3FDuUTVRvPlYV4aBfnOOcGuILhQAT7nzeV12uSrLBzImUM9CDVoncDSX4brR/gwqu0heQ3BQ0g==}
     dependencies:
       tslib: 2.3.1
     dev: false
