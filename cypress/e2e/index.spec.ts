@@ -8,7 +8,7 @@ describe("Visit Main page", () => {
     cy.visit("").get("header > .myName").should("contain.text", "David Zadok");
   });
   it('Display markdown with a title starting with "Motivation"', () => {
-    cy.visit("").get(".blogPost > h2").should("include.text", "Motivation");
+    cy.visit("").get(".blogPost > h1").should("include.text", "Motivation");
   });
   it("Should show the blog post date", () => {
     cy.visit("")
