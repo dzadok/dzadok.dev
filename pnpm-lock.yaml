@@ -104,8 +104,8 @@ devDependencies:
     specifier: ^2.9.18
     version: 2.9.18
   ws:
-    specifier: ^8.5.0
-    version: 8.5.0
+    specifier: ^8.17.1
+    version: 8.17.1
 
 packages:
 
@@ -5662,7 +5662,7 @@ packages:
       jszip: 3.9.1
       rimraf: 3.0.2
       tmp: 0.2.1
-      ws: 8.5.0
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -5674,7 +5674,7 @@ packages:
     dependencies:
       jszip: 3.9.1
       tmp: 0.2.1
-      ws: 8.5.0
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6479,12 +6479,12 @@ packages:
   /wrappy@1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
 
-  /ws@8.5.0:
-    resolution: {integrity: sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==}
+  /ws@8.17.1:
+    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
-      utf-8-validate: ^5.0.2
+      utf-8-validate: '>=5.0.2'
     peerDependenciesMeta:
       bufferutil:
         optional: true
