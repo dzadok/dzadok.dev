@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.5",
-    "@cypress/react": "^5.12.5",
     "@cypress/vite-dev-server": "^2.2.3",
     "@types/react": "^17.0.80",
     "@types/react-dom": "^17.0.25",
