@@ -1,12 +1,12 @@
 import { WebTracerProvider } from "@opentelemetry/sdk-trace-web";
 import { getWebAutoInstrumentations } from "@opentelemetry/auto-instrumentations-web";
-import { CollectorTraceExporter } from "@opentelemetry/exporter-collector";
 import { SimpleSpanProcessor } from "@opentelemetry/sdk-trace-base";
 import { registerInstrumentations } from "@opentelemetry/instrumentation";
 import { ZoneContextManager } from "@opentelemetry/context-zone";
 import { B3Propagator } from "@opentelemetry/propagator-b3";
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-proto";
 
-const exporter = new CollectorTraceExporter({});
+const exporter = new OTLPTraceExporter({});
 
 const provider = new WebTracerProvider();
 provider.addSpanProcessor(new SimpleSpanProcessor(exporter));
